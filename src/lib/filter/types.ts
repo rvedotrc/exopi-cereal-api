@@ -1,15 +1,38 @@
 import type { BinaryOperator } from "./binaryOperators";
 
-export type FilterNode = Predicate;
+export type FilterNode = And | Or | Not | LeafNode;
 
-export type Predicate = And | Or | Not | LeafNode;
-export type And = { readonly and: readonly Predicate[] };
-export type Or = { readonly or: readonly Predicate[] };
-export type Not = { readonly not: Predicate };
+/**
+ * False iff there is at least one filter node which evaluates to false.
+ */
+export type And = { readonly and: readonly FilterNode[] };
+
+/**
+ * True iff there is at least one filter node which evaluates to true.
+ */
+export type Or = { readonly or: readonly FilterNode[] };
+
+/**
+ * True iff the given filter node is false
+ * e.g.: {"not":{"u":["weight","isnull"]}}
+ * which means: NOT(weight is null); also known as: weight is not null.
+ */
+export type Not = { readonly not: FilterNode };
+
 export type LeafNode = BinaryOperation | UnaryOperation;
+
+/**
+ * True iff the field named by the first `string` compares (using the BinaryOperator) against the value in the second string.
+ * e.g.: {"b":["shelf","ge","2"]} (which means: shelf >= 2).
+ */
 export type BinaryOperation = {
   readonly b: readonly [string, BinaryOperator, string];
 };
+
+/**
+ * True iff the field named by the `string` is null
+ * e.g.: {"u":["weight","isnull"]}
+ */
 export type UnaryOperation = { readonly u: readonly [string, "isnull"] };
 
 export const isAnd = (f: FilterNode): f is And => "and" in f;

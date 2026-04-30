@@ -8,7 +8,7 @@ import type { FindOptionsOrder } from "typeorm";
 export const getOrder = (
   spec: string | null | undefined,
 ): Either<FindOptionsOrder<Cereal>, NextResponse> => {
-  const sort = (spec ?? "").split(/,/g);
+  const sort = (spec ?? "").split(/,/g).filter(Boolean);
   const order: FindOptionsOrder<Cereal> = {};
   const fields = AppDataSource.entityMetadatasMap
     .get(Cereal)!

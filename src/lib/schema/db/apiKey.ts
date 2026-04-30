@@ -12,10 +12,10 @@ export class APIKey {
   })
   id: string = undefined as any;
 
-  @Column({ nullable: false, type: String, name: "api_key" }) apiKey: string =
+  @Column({ nullable: false, type: String, name: "api_key" }) api_key: string =
     undefined as any;
 
-  @Column({ nullable: false, type: String, name: "user_id" }) userId: string =
+  @Column({ nullable: false, type: String, name: "user_id" }) user_id: string =
     undefined as any;
 
   @Column({ nullable: false, type: String }) expires: string = undefined as any;

@@ -51,7 +51,7 @@ export const compileFilter = (filterNode: FilterNode): Compiled => {
   } else if (isOr(filterNode)) {
     return compileAndOr(filterNode.or, false, true, " OR ");
   } else if (isNot(filterNode)) {
-    const compiled = compileFilter(filterNode);
+    const compiled = compileFilter(filterNode.not);
 
     if (typeof compiled === "boolean") return !compiled;
 

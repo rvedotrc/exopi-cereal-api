@@ -14,7 +14,7 @@ export class User {
 
   @Column({ nullable: false, type: String }) name: string = undefined as any;
 
-  @OneToMany("APIKey", (them: APIKey) => them.userId, { nullable: false })
+  @OneToMany("APIKey", (them: APIKey) => them.user, { nullable: false })
   @JoinColumn({ name: "id", referencedColumnName: "user_id" })
   apiKeys: APIKey[] = undefined as any;
 }

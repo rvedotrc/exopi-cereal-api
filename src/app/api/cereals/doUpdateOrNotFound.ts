@@ -9,7 +9,7 @@ const doUpdateOrNotFound = async (item: CerealWithID) => {
   });
 
   if (!dbItem) {
-    return NextResponse.json({ error: "No such item" }, { status: 422 });
+    return NextResponse.json({ error: "No such item" }, { status: 404 });
   }
 
   item = {

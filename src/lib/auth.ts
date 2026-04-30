@@ -21,7 +21,7 @@ export const currentUser = async (req: NextRequest): Promise<User | null> => {
 
   const apiKey = await AppDataSource.manager.findOne(APIKey, {
     where: {
-      apiKey: apiKeyText,
+      api_key: apiKeyText,
       expires: LessThanOrEqual(now),
     },
     relations: {

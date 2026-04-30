@@ -15,5 +15,3 @@ Stack:
 An API is provided for manipulating `cereals`. No API is provided for manipulating `users` / `api_keys`.
 
 The primary key `id`s used are ULIDs.
-
-## The API

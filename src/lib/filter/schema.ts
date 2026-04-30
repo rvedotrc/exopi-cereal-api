@@ -10,7 +10,7 @@ import type {
   UnaryOperation,
 } from "./types";
 
-const Predicate = s.Union(
+export const FilterNode = s.Union(
   s.suspend((): s.Schema<And> => And),
   s.suspend((): s.Schema<Or> => Or),
   s.suspend((): s.Schema<Not> => Not),
@@ -19,19 +19,19 @@ const Predicate = s.Union(
 
 const And = s
   .Struct({
-    and: s.Array(Predicate),
+    and: s.Array(FilterNode),
   })
   .annotations({ parseOptions: { onExcessProperty: "error" } });
 
 const Or = s
   .Struct({
-    or: s.Array(Predicate),
+    or: s.Array(FilterNode),
   })
   .annotations({ parseOptions: { onExcessProperty: "error" } });
 
 const Not = s
   .Struct({
-    not: Predicate,
+    not: FilterNode,
   })
   .annotations({ parseOptions: { onExcessProperty: "error" } });
 
@@ -51,5 +51,3 @@ const UnaryOperation = s
     u: s.Tuple(s.String, s.Literal("isnull")),
   })
   .annotations({ parseOptions: { onExcessProperty: "error" } });
-
-export const FilterNode = Predicate;
