@@ -1,4 +1,4 @@
-import { left, right, type Either } from "effect/Either";
+import { type Either, left, right } from "effect/Either";
 
 export const parseDataFile = (t: string): Either<object[], unknown> => {
   const rows = t

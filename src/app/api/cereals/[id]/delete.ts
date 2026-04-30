@@ -1,7 +1,7 @@
 import { currentUser } from "@lib/auth";
 import AppDataSource from "@lib/dataSource";
 import { Cereal } from "@lib/schema/db/cereal";
-import { NextResponse, type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
 import { isValid } from "ulid";
 
 export const DELETE = async (

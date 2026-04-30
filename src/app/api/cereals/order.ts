@@ -1,7 +1,7 @@
 import AppDataSource from "@lib/dataSource";
 import { Cereal } from "@lib/schema/db/cereal";
-import { left, right } from "effect/Either";
 import type { Either } from "effect/Either";
+import { left, right } from "effect/Either";
 import { NextResponse } from "next/server";
 import type { FindOptionsOrder } from "typeorm";
 

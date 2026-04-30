@@ -1,10 +1,11 @@
-import { flatMap, map, mapLeft, right, type Either } from "effect/Either";
+import { FilterNode } from "@lib/filter/schema";
+import { type Either, flatMap, map, mapLeft, right } from "effect/Either";
+import { pipe } from "effect/Function";
 import { decodeUnknownEither } from "effect/Schema";
 import { NextResponse } from "next/server";
-import { compileFilter, type Compiled } from "../../../lib/filter/compile";
-import { pipe } from "effect/Function";
+
+import { type Compiled, compileFilter } from "../../../lib/filter/compile";
 import { jsonParse } from "./jsonParse";
-import { FilterNode } from "@lib/filter/schema";
 
 export const getWhere = (
   spec: string | null | undefined,

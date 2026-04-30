@@ -1,13 +1,14 @@
 import * as s from "effect/Schema";
+
+import { BinaryOperators } from "./binaryOperators";
 import type {
   And,
-  Or,
-  Not,
-  LeafNode,
   BinaryOperation,
+  LeafNode,
+  Not,
+  Or,
   UnaryOperation,
 } from "./types";
-import { BinaryOperators } from "./binaryOperators";
 
 const Predicate = s.Union(
   s.suspend((): s.Schema<And> => And),

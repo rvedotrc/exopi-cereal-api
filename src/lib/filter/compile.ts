@@ -1,16 +1,17 @@
 import assert from "assert";
 import { ulid } from "ulid";
 import { inspect } from "util";
+
+import { BINARY_OPERATORS_TO_SQL } from "./binaryOperators";
 import { checkField } from "./checkField";
 import {
+  type FilterNode,
   isAnd,
   isBinaryOperation,
   isNot,
   isOr,
   isUnaryOperation,
-  type FilterNode,
 } from "./types";
-import { BINARY_OPERATORS_TO_SQL } from "./binaryOperators";
 
 export type Compiled =
   | {

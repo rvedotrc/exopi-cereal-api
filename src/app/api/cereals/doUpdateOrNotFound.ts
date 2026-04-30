@@ -1,7 +1,7 @@
-import { NextResponse } from "next/server";
+import AppDataSource from "@lib/dataSource";
 import type { CerealWithID } from "@lib/schema/api/cereal";
 import { Cereal } from "@lib/schema/db/cereal";
-import AppDataSource from "@lib/dataSource";
+import { NextResponse } from "next/server";
 
 const doUpdateOrNotFound = async (item: CerealWithID) => {
   const dbItem = await AppDataSource.manager.findOne(Cereal, {

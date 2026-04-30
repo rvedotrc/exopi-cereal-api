@@ -1,8 +1,8 @@
+import AppDataSource from "@lib/dataSource";
+import type { CerealWithID, CerealWithoutID } from "@lib/schema/api/cereal";
+import { Cereal } from "@lib/schema/db/cereal";
 import { NextResponse } from "next/server";
 import { ulid } from "ulid";
-import type { CerealWithoutID, CerealWithID } from "@lib/schema/api/cereal";
-import { Cereal } from "@lib/schema/db/cereal";
-import AppDataSource from "@lib/dataSource";
 
 const doCreate = async (item: CerealWithoutID) => {
   const itemWithId: CerealWithID = {

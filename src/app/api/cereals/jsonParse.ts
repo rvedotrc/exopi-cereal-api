@@ -1,5 +1,5 @@
 import { protoSafeParse } from "@blaahaj/json";
-import { left, right, type Either } from "effect/Either";
+import { type Either, left, right } from "effect/Either";
 
 export const jsonParse = (s: string): Either<unknown, unknown> => {
   try {

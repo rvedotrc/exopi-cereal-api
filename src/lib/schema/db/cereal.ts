@@ -1,8 +1,9 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Column, Entity, PrimaryColumn } from "typeorm";
-import type { MfrCode } from "./mfrCode";
+
 import type { CerealType } from "./cerealType";
+import type { MfrCode } from "./mfrCode";
 
 @Entity({ name: "cereals" })
 export class Cereal {

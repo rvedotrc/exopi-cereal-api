@@ -1,7 +1,8 @@
 import AppDataSource from "@lib/dataSource";
 import { Cereal } from "@lib/schema/db/cereal";
 import { isLeft } from "effect/Either";
-import { NextResponse, type NextRequest } from "next/server";
+import { type NextRequest, NextResponse } from "next/server";
+
 import { getOrder } from "./order";
 import { getWhere } from "./where";
 

@@ -1,10 +1,11 @@
-import { CerealWithoutID, CerealWithID } from "@lib/schema/api/cereal";
+import { currentUser } from "@lib/auth";
+import { CerealWithID, CerealWithoutID } from "@lib/schema/api/cereal";
 import { decodeUnknownEither } from "effect/ParseResult";
 import { isRight } from "effect/StreamHaltStrategy";
-import { NextResponse, type NextRequest } from "next/server";
-import doUpdateOrNotFound from "../doUpdateOrNotFound";
+import { type NextRequest, NextResponse } from "next/server";
 import { isValid } from "ulid";
-import { currentUser } from "@lib/auth";
+
+import doUpdateOrNotFound from "../doUpdateOrNotFound";
 
 export const PUT = async (
   req: NextRequest,

@@ -1,6 +1,7 @@
 /* eslint-disable @typescript-eslint/no-explicit-any */
 
 import { Column, Entity, JoinColumn, ManyToOne, PrimaryColumn } from "typeorm";
+
 import type { User } from "./user";
 
 @Entity({ name: "api_keys" })

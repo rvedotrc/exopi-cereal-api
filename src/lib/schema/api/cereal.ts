@@ -1,6 +1,7 @@
 import * as s from "effect/Schema";
-import { MFR_CODES } from "../db/mfrCode";
+
 import { CerealTypes } from "../db/cerealType";
+import { MFR_CODES } from "../db/mfrCode";
 
 export const IDSchema = s.ULID;
 export type IDType = (typeof IDSchema)["Type"];

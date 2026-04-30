@@ -1,8 +1,9 @@
 import { currentUser } from "@lib/auth";
-import { CerealWithoutID, CerealWithID } from "@lib/schema/api/cereal";
+import { CerealWithID, CerealWithoutID } from "@lib/schema/api/cereal";
 import { decodeUnknownEither } from "effect/ParseResult";
 import { isRight } from "effect/StreamHaltStrategy";
 import { NextRequest, NextResponse } from "next/server";
+
 import doCreate from "./doCreate";
 import doUpdateOrNotFound from "./doUpdateOrNotFound";
 
