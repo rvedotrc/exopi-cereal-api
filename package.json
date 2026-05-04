@@ -14,6 +14,7 @@
     "test:package-json": "npmPkgJsonLint ."
   },
   "dependencies": {
+    "@base-ui/react": "^1.4.1",
     "@blaahaj/json": "^1.0.1",
     "@emotion/react": "^11.14.0",
     "@emotion/styled": "^11.14.1",

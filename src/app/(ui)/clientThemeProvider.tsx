@@ -5,7 +5,12 @@ import type { PropsWithChildren } from "react";
 
 const theme = createTheme({
   palette: {
-    mode: "light",
+    primary: {
+      main: "#5e35b1",
+    },
+    secondary: {
+      main: "#f50000",
+    },
   },
 });
 

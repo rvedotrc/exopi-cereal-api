@@ -8,6 +8,6 @@ export const MFR_NAMES = {
   R: "Ralston Purina",
 } as const;
 
-export const MFR_CODES = [...Object.keys(MFR_NAMES)] as const;
-
 export type MfrCode = keyof typeof MFR_NAMES;
+
+export const MFR_CODES = [...Object.keys(MFR_NAMES)] as readonly MfrCode[];
